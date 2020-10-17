@@ -1,0 +1,37 @@
+{
+  "name": "api-email",
+  "version": "1.0.0",
+  "description": "API para envio automático de e-mails para clientes offline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/lasaito/api-email.git"
+  },
+  "keywords": [
+    "api",
+    "email"
+  ],
+  "author": "Lucas S",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://gitlab.com/lasaito/api-email/issues"
+  },
+  "homepage": "https://gitlab.com/lasaito/api-email#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.4.11",
+    "nodemailer-express-handlebars": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
