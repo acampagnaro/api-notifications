@@ -1,11 +1,9 @@
 const nodemailer = require('nodemailer')
-const dotenv = require('dotenv')
-const mailTemplate = require('./mail-template')
-dotenv.config()
-
+const mailTemplate = require('./email-template.js')
+const path = require('path')
 
 module.exports = {
-  async sendEmail (cliente, destination, domain) {
+  sendEmail (cliente, destination, domain) {
     let transporter = nodemailer.createTransport({
       host: process.env.HOST,
       port: 465,
@@ -17,9 +15,13 @@ module.exports = {
     let mailOptions = {
       from: process.env.EMAIL,
       to: destination,
-      subject: 'MeuClinic Offline',
-      text: `Prezado Cliente, nosso monitoramento verificou que seu serviço está offline, por favor acesse o link ${process.env.DASHBOARD}static-monitor para reativação ou nosso suporte para mais detalhes.`,
-      html: mailTemplate.text(cliente, domain),
+      subject: 'Monitoramento MeuClinic',
+      html: mailTemplate(cliente, domain),
+      attachments: [{
+        filename: 'clinic-logo.jpg',
+        path: path.join(__dirname, 'resources/clinic-logo.jpg'),
+        cid: 'logoClinicUniqueValue'
+      }]
     }
   
     transporter.sendMail(mailOptions, function (err, data) {

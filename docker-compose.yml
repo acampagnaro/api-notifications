@@ -1,27 +1,27 @@
-version: '3.7'
+version: '2.0'
 
 services:
 
   api-notification:
-    image: spitzerio/api-notification
+    image: spitzerio/api-notification:latest
     deploy:
       labels: [API=NOTIFICATION]
       mode: replicated
       replicas: 1
     env_file:
      - .env
-    # environment:
-    #   - NODE_ENV=production
-    #   - EMAIL=
-    #   - PASSWORD=
-    #   - HOST=
-    #   - AXIOS_DOMAIN=
-    #   - USER_NAME=
-    #   - AUTH_PASSWORD=
-    #   - TOKEN_KEY=
-    #   - DASHBOARD=
-    #   - AUTHORIZATION=
-    #   - PORT=8001
+    environment:
+      - NODE_ENV=
+      - EMAIL=
+      - PASSWORD=
+      - HOST=
+      - AXIOS_DOMAIN=
+      - USER_NAME=
+      - AUTH_PASSWORD=
+      - AUTHORIZATION=
+      - CRON=
+      - TOKEN_KEY=
+      - DASHBOARD=
+      - PORT=
     ports:
       - 8001:8001
-      
