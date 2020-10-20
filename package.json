@@ -1,27 +1,30 @@
 {
-  "name": "api-email",
-  "version": "1.0.0",
+  "name": "api-notification",
+  "version": "1.1.0",
   "description": "API para envio automático de e-mails para clientes offline",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
+    "docker:dev:exec": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml exec server",
+    "docker:prod": "docker-compose up -d"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/lasaito/api-email.git"
+    "url": "https://github.com/acampagnaro/api-notifications"
   },
   "keywords": [
     "api",
     "email"
   ],
-  "author": "Lucas S",
-  "license": "UNLICENSED",
+  "author": "Risc sistemas",
+  "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/lasaito/api-email/issues"
+    "url": "https://github.com/acampagnaro/api-notifications/issues"
   },
-  "homepage": "https://gitlab.com/lasaito/api-email#readme",
+  "homepage": "https://github.com/acampagnaro/api-notifications#readme",
   "dependencies": {
     "axios": "^0.20.0",
     "cron": "^1.8.2",
