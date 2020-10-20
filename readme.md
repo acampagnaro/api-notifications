@@ -1,3 +1,5 @@
+![Test](https://github.com/acampagnaro/api-notifications/workflows/Test/badge.svg?branch=master)
+
 # SMTP credentials for the email
 ```
 EMAIL=
